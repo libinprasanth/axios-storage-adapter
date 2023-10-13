@@ -1,0 +1,38 @@
+{
+  "name": "axios-storage-adapter",
+  "version": "1.0.0",
+  "description": "Simple library for axios api cahce",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libinprasanth/axios-storage-adapter.git"
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "axios",
+    "axios-storage-adapter",
+    "axios-cache-adapter",
+    "axios-adapter"
+  ],
+  "author": "Libin Prasanth (libinprasanth)",
+  "license": "ISC",
+  "peerDependencies": {
+    "axios": "^1.5.1"
+  },
+  "devDependencies": {
+    "axios": "^1.5.1",
+    "tsup": "^7.2.0"
+  },
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
+}
