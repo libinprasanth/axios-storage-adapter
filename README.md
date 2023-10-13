@@ -19,7 +19,7 @@ import { CacheService, StorageAdapter } from "axios-storage-adapter";
 function App() {
   CacheService.setupDB("my-cache", "my-table", []);
   const request = Axios.create({
-    adapter: storageAdapter({
+    adapter: StorageAdapter({
       cache: true,
     }) as any,
   });

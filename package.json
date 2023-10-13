@@ -1,6 +1,6 @@
 {
   "name": "axios-storage-adapter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple library for axios api cahce",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
