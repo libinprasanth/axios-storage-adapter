@@ -1,5 +1,5 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from "axios";
-import CacheService from "./cache-service";
+import { CacheService } from "./cache-service";
 
 // Default options for the storage adapter
 const type = typeof axios.defaults.adapter == "object" ? axios.defaults.adapter[0] : "xhr";
@@ -80,7 +80,7 @@ async function cacheAdapter(config: any): Promise<AxiosResponse> {
 }
 
 // Main storage adapter function
-export default function StorageAdapter(opts: any) {
+export function StorageAdapter(opts: any) {
   Object.assign(options, opts);
   // If caching is not enabled, return the default adapter
   if (!options.cache) return options.adapter;

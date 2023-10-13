@@ -1,7 +1,2 @@
-import CacheService from "./cache-adapter";
-import StorageAdapter from "./cache-service";
-
-export {
-    CacheService,
-    StorageAdapter
-}
+export * from "./cache-adapter";
+export * from "./cache-service";

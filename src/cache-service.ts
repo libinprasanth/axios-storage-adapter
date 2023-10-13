@@ -1,7 +1,7 @@
 /**
  * Cache service class which is used to create the database
  */
-export default class CacheService {
+export class CacheService {
   static IndxDb: IDBFactory = window.indexedDB;
   static db: IDBDatabase | any;
   static dbName: string = "";
