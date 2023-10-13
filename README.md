@@ -1,29 +1,37 @@
-react-content-editable
+axios-storage-adapter
 =====================
 
-It's React component which support content editable div
+It's axios adapter for cache the api calls
 
 
 ## Install
 
 ```sh
-npm install reactjs-content-editable
+npm install axios-storage-adapter
 ```
 
 ## Usage
 
 ```javascript
-import React, { useState } from 'react';
-import { ContentEditable } from "reactjs-content-editable";
+import Axios from "axios";
+import { CacheService, StorageAdapter } from "axios-storage-adapter";
 
 function App() {
-  const [html, setHtml] = useState("")
+  CacheService.setupDB("my-cache", "my-table", []);
+  const request = Axios.create({
+    adapter: storageAdapter({
+      cache: true,
+    }) as any,
+  });
+  const loadData = () => {
+    request.get("https://reqres.in/api/users?page=2").then((data) => {
+      console.log(data);
+    });
+  };
+
   return (
     <>
-      <ContentEditable 
-        html={html} 
-        onChange={(value: string) => setHtml(value)} 
-      />
+      <button onClick={loadData}>Load</button>
     </>
   );
 }
@@ -32,24 +40,21 @@ export default App;
 
 ```
 
-## Available props
-|prop|description|type|
-|--|----|----|
-|html|**required:** innerHTML of the editable element|String|
-|disabled|use true to disable editing|Boolean|
-|onChange|called whenever `innerHTML` changes|Function|
-|className|there is no default className are given, you can add your own|String|
-|style|style properties which support react style format, by default height is set to 200px|Object|
-|innerRef|if you want to control the element, you can pass ref|LegacyRef<HTMLDivElement> | React.RefObject<HTMLDivElement>|
+## Available setupDB parameters
+|parameter|description|
+|--|----|
+|database name| **optional** this is define your indexdDB database name|
+|table name| **optional** this is define your indexdDB table name|
+|parameters| **optional** which ever parameter skipped from the url parameter, add it as array format |
 
 ## Support
 If you are facing any issue, please contact [via linkedin ( Libin Prasanth )](https://www.linkedin.com/in/libinprasanth/).
 
 ## Examples
 
-Do you want to try **react-content-editable** before use ?
+Do you want to try **axios-storage-adapter** before use ?
 
- * [Simple example](https://codesandbox.io/s/react-content-editable-k6zn5c)
+ * [Simple example](https://codesandbox.io/s/axios-storage-adapter-nnmfh6)
 
 ## Donate!
 Like my Work! [Donate](https://www.paypal.me/LibinPrasanth) 
