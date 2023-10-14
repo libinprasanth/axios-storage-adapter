@@ -1,6 +1,6 @@
 {
   "name": "axios-storage-adapter",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This is an Axios adapter designed to cache API calls",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
