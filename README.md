@@ -1,8 +1,8 @@
 axios-storage-adapter
 =====================
 
-It's axios adapter for cache the api calls
-
+This is an Axios adapter designed to cache API calls.
+Cached data will be shared accross all the tabs in same domain, It will remove automatically when you close all the browser tabs. If you want to delete the cahce manually you can use below code `CacheService.deleteData()`
 
 ## Install
 
@@ -46,6 +46,7 @@ export default App;
 |database name| **optional** this is define your indexdDB database name|
 |table name| **optional** this is define your indexdDB table name|
 |parameters| **optional** which ever parameter skipped from the url parameter, add it as array format |
+
 
 ## Support
 If you are facing any issue, please contact [via linkedin ( Libin Prasanth )](https://www.linkedin.com/in/libinprasanth/).
